@@ -312,7 +312,7 @@ CONFIG_SCHEMA = JK_BMS_BLE_COMPONENT_SCHEMA.extend(
         cv.Optional(CONF_SMART_SLEEP_VOLTAGE): JK_NUMBER_SCHEMA.extend(
             {
                 cv.Optional(CONF_MIN_VALUE, default=0.003): cv.float_,
-                cv.Optional(CONF_MAX_VALUE, default=3.650): cv.float_,
+                cv.Optional(CONF_MAX_VALUE, default=4.350): cv.float_,
                 cv.Optional(CONF_STEP, default=0.001): cv.float_,
             }
         ),
@@ -354,28 +354,28 @@ CONFIG_SCHEMA = JK_BMS_BLE_COMPONENT_SCHEMA.extend(
         cv.Optional(CONF_CELL_SOC100_VOLTAGE): JK_NUMBER_SCHEMA.extend(
             {
                 cv.Optional(CONF_MIN_VALUE, default=0.003): cv.float_,
-                cv.Optional(CONF_MAX_VALUE, default=3.650): cv.float_,
+                cv.Optional(CONF_MAX_VALUE, default=4.350): cv.float_,
                 cv.Optional(CONF_STEP, default=0.001): cv.float_,
             }
         ),
         cv.Optional(CONF_CELL_SOC0_VOLTAGE): JK_NUMBER_SCHEMA.extend(
             {
                 cv.Optional(CONF_MIN_VALUE, default=0.003): cv.float_,
-                cv.Optional(CONF_MAX_VALUE, default=3.650): cv.float_,
+                cv.Optional(CONF_MAX_VALUE, default=4.350): cv.float_,
                 cv.Optional(CONF_STEP, default=0.001): cv.float_,
             }
         ),
         cv.Optional(CONF_CELL_REQUEST_CHARGE_VOLTAGE): JK_NUMBER_SCHEMA.extend(
             {
                 cv.Optional(CONF_MIN_VALUE, default=0.003): cv.float_,
-                cv.Optional(CONF_MAX_VALUE, default=3.650): cv.float_,
+                cv.Optional(CONF_MAX_VALUE, default=4.350): cv.float_,
                 cv.Optional(CONF_STEP, default=0.001): cv.float_,
             }
         ),
         cv.Optional(CONF_CELL_REQUEST_FLOAT_VOLTAGE): JK_NUMBER_SCHEMA.extend(
             {
                 cv.Optional(CONF_MIN_VALUE, default=0.003): cv.float_,
-                cv.Optional(CONF_MAX_VALUE, default=3.650): cv.float_,
+                cv.Optional(CONF_MAX_VALUE, default=4.350): cv.float_,
                 cv.Optional(CONF_STEP, default=0.001): cv.float_,
             }
         ),
