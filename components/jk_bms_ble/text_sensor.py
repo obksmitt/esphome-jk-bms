@@ -24,28 +24,21 @@ TEXT_SENSORS = [
 
 CONFIG_SCHEMA = JK_BMS_BLE_COMPONENT_SCHEMA.extend(
     {
-        cv.Optional(CONF_ERRORS): text_sensor.TEXT_SENSOR_SCHEMA.extend(
-            {
-                cv.GenerateID(): cv.declare_id(text_sensor.TextSensor),
-                cv.Optional(CONF_ICON, default=ICON_ERRORS): cv.icon,
-            }
-        ),
-        cv.Optional(CONF_OPERATION_STATUS): text_sensor.TEXT_SENSOR_SCHEMA.extend(
-            {
-                cv.GenerateID(): cv.declare_id(text_sensor.TextSensor),
-                cv.Optional(CONF_ICON, default=ICON_OPERATION_STATUS): cv.icon,
-            }
-        ),
-        cv.Optional(
-            CONF_TOTAL_RUNTIME_FORMATTED
-        ): text_sensor.TEXT_SENSOR_SCHEMA.extend(
-            {
-                cv.GenerateID(): cv.declare_id(text_sensor.TextSensor),
-                cv.Optional(CONF_ICON, default=ICON_TIMELAPSE): cv.icon,
-            }
-        ),
+        cv.Optional(CONF_ERRORS): text_sensor.text_sensor_schema(
+            text_sensor.TextSensor,
+            icon=ICON_ERRORS,
+        ).extend(cv.COMPONENT_SCHEMA),
+        cv.Optional(CONF_OPERATION_STATUS): text_sensor.text_sensor_schema(
+            text_sensor.TextSensor,
+            icon=ICON_OPERATION_STATUS,
+        ).extend(cv.COMPONENT_SCHEMA),
+        cv.Optional(CONF_TOTAL_RUNTIME_FORMATTED): text_sensor.text_sensor_schema(
+            text_sensor.TextSensor,
+            icon=ICON_TIMELAPSE,
+        ).extend(cv.COMPONENT_SCHEMA),
     }
 )
+
 
 
 async def to_code(config):
