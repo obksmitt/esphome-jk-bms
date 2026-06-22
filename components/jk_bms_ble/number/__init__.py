@@ -298,9 +298,12 @@ JK_NUMBER_SCHEMA = number.number_schema(
     JkNumber,
     unit_of_measurement=UNIT_VOLT,
     icon=ICON_EMPTY,
-    step=0.01,
     mode="BOX",
     entity_category=ENTITY_CATEGORY_CONFIG,
+).extend(
+    {
+        cv.Optional(CONF_STEP, default=0.01): cv.float_,
+    }
 ).extend(cv.COMPONENT_SCHEMA)
 
 CONFIG_SCHEMA = JK_BMS_BLE_COMPONENT_SCHEMA.extend(
