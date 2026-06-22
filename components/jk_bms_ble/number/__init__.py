@@ -298,11 +298,11 @@ JK_NUMBER_SCHEMA = number.number_schema(
     JkNumber,
     unit_of_measurement=UNIT_VOLT,
     icon=ICON_EMPTY,
-    mode="BOX",
     entity_category=ENTITY_CATEGORY_CONFIG,
 ).extend(
     {
         cv.Optional(CONF_STEP, default=0.01): cv.float_,
+        cv.Optional(CONF_MODE, default="BOX"): cv.enum(number.NUMBER_MODES, upper=True),
     }
 ).extend(cv.COMPONENT_SCHEMA)
 
